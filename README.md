@@ -1,7 +1,7 @@
 # SQL103
 
 ##  FOREIGN KEY 
- FOREIGN KEY: A foreign key is a column or a set of columns in a database table that refers to the primary key or a unique key of another table.
+### FOREIGN KEY: A foreign key is a column or a set of columns in a database table that refers to the primary key or a unique key of another table.
  
  ```
 CREATE TABLE customers (
