@@ -3,7 +3,7 @@
 ##  FOREIGN KEY 
 #### FOREIGN KEY: A foreign key is a column or a set of columns in a database table that refers to the primary key or a unique key of another table.
 
- #### example:
+ #### Example:
  ```
 CREATE TABLE customers (
     customer_id INT PRIMARY KEY,
@@ -15,4 +15,9 @@ CREATE TABLE customers (
     customer_id INT,
     FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
 );
+```
+IF the table is already created and you want ti add foreign key for it EX:
+```
+ALTER TABLE table_name
+ADD FOREIGN KEY (col_name) REFERENCES table_name(col_name);
 ```
