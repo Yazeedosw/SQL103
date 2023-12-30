@@ -6,8 +6,8 @@
  `CREATE TABLE customers (
     customer_id INT PRIMARY KEY,
     customer_name VARCHAR(50)
-);
-CREATE TABLE orders (
+);`
+`CREATE TABLE orders (
     order_id INT PRIMARY KEY,
     order_date DATE,
     customer_id INT,
