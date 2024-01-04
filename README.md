@@ -37,8 +37,54 @@ CREATE TABLE employee_details (
     FOREIGN KEY (employee_id) REFERENCES employees(employee_id)
 );
 ```
-In this example:
+2- One-to-Many (1:N): Each row in one table can be related to multiple rows in 
+```
+CREATE TABLE departments (
+    department_id INT PRIMARY KEY,
+    department_name VARCHAR(50)
+);
 
-The *employees table* stores basic information about each employee, with the _employee_id_ as the _primary key_.
-The *employee_details* table stores additional details such as birth date and address, also using _employee_id_ as the _primary key_.
-The _employee_id_ in the *employee_details* table is a foreign key that references the _employee_id_ in the employees table, establishing a one-to-one relationship.
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    employee_name VARCHAR(100),
+    department_id INT,
+    FOREIGN KEY (department_id) REFERENCES departments(department_id)
+);
+
+```
+3-Many-to-One (N:1): Multiple rows in one table can be related to a single row in 
+```
+CREATE TABLE countries (
+    country_id INT PRIMARY KEY,
+    country_name VARCHAR(50)
+);
+
+CREATE TABLE cities (
+    city_id INT PRIMARY KEY,
+    city_name VARCHAR(50),
+    country_id INT,
+    FOREIGN KEY (country_id) REFERENCES countries(country_id)
+);
+
+```
+4-Many-to-Many (N:N): Multiple rows in one table can be related to multiple rows in another table.
+```
+CREATE TABLE students (
+    student_id INT PRIMARY KEY,
+    student_name VARCHAR(100)
+);
+
+CREATE TABLE courses (
+    course_id INT PRIMARY KEY,
+    course_name VARCHAR(50)
+);
+
+CREATE TABLE student_courses (
+    student_id INT,
+    course_id INT,
+    PRIMARY KEY (student_id, course_id),
+    FOREIGN KEY (student_id) REFERENCES students(student_id),
+    FOREIGN KEY (course_id) REFERENCES courses(course_id)
+);
+```
+
