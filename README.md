@@ -90,9 +90,41 @@ CREATE TABLE student_courses (
 ## Joins
 ### Inner Join
 Format:
-``
+```
 SELECT column_name(s)
 FROM table1
 INNER JOIN table2
 ON table1.column_name=table2.column_name;
-``
+```
+
+### LEFT OUTER JOINS
+Format: 
+```
+SELECT column_name(s)
+FROM table1
+LEFT OUTER JOIN table2
+ON table1.column_name=table2.column_name;
+```
+
+###  RIGHT OUTER JOINS
+Format: 
+```
+SELECT column_name(s)
+FROM table1
+RIGHT OUTER JOIN table2
+ON table1.column_name=table2.column_name;
+```
+### CROSS JOINS 
+Format : 
+```
+SELECT column1, column2,..
+FROM table1 CROSS JOIN table2;
+```
+
+### NATURAL JOINS
+Format: 
+```
+SELECT [column_names | *]
+FROM table_name1
+NATURAL JOIN table_name2;
+```
