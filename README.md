@@ -145,3 +145,30 @@ Format of Query :
 ```
 Select * from ihgh_grade ; 
 ```
+## index Concept 
+**index** : index is a data structure that improves the speed of data retrieval operations on a database table at the cost of additional writes and storage space.
+
+**Format index** 
+```
+CREATE INDEX IndexName
+ON TableName (ColumnName);
+```
+To Display index : 
+```
+SHOW INDEX FROM TableName;
+```
+## PROCEDURE Concept 
+**Procedure** : Stored procedures are stored in the database and can be invoked or called by name.
+
+**Format** 
+```
+delimiter |/
+CREATE PROCEDURE procedure_name (parameter _list)
+BEGIN
+statements;
+END
+```
+To call the procedure :
+```
+CALL stored_procedure_name(argument_list);
+```
